@@ -38,17 +38,19 @@
     "port": 9000,
     "host": "localhost",
     "open": false,
-    "index": "index.html",
-    "baseDir": ".",
-    "output": "scripts"
+    "index": "dist/app/index.html",
+    "baseDir": "dist/app/",
+    "output": "dist/app/scripts",
+    "baseUrl": "scripts"
   },
   "build": {
     "targets": [
       {
         "port": 9000,
-        "index": "index.html",
-        "baseDir": ".",
-        "output": "scripts"
+        "index": "dist/app/index.html",
+        "baseDir": "dist/app/",
+        "output": "dist/app/scripts",
+        "baseUrl": "scripts"
       }
     ],
     "options": {
@@ -98,7 +100,7 @@
     "copyFiles": {
       "index.html": "dist/app",
       "favicon.ico": "dist/app",
-      "/scripts/*": "dist/app/scripts"
+      "/scripts/*": "dist/app/scripts/"
     },
     "loader": {
       "type": "require",
