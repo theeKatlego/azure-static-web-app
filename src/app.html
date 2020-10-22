@@ -16,6 +16,33 @@
   - yarn install
   - au run --watch 
   - commit and push
+
+  I made the following changes so to create a dist/app directory for build/deployment artifacts.
+  Updated build and platform config in the aurelia_project/aurelia.json file
+
+  "build": {
+    "targets": [
+      {
+        "port": 9000,
+        "index": "dist/app/index.html",
+        "baseDir": "dist/app/",
+        "output": "dist/app/scripts",
+        "baseUrl": "scripts"
+      }
+    ],
+    ...
+  }
+  ...
+  "platform": {
+    "port": 9000,
+    "host": "localhost",
+    "open": false,
+    "index": "dist/app/index.html",
+    "baseDir": "dist/app/",
+    "output": "dist/app/scripts",
+    "baseUrl": "scripts"
+  }
+
 - Create a Static Web App on Azure Portal
 
 <iframe src="https://channel9.msdn.com/Events/Build/2020/INT159/player" width="960" height="540" allowFullScreen frameBorder="0" title="From code to scale! Build a static web app in minutes - Microsoft Channel 9 Video"></iframe>
