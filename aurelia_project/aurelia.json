@@ -1,5 +1,5 @@
 {
-  "name": "azure-web-app",
+  "name": "azure-static-web-app",
   "type": "project:application",
   "paths": {
     "root": "src",
@@ -78,10 +78,28 @@
             "name": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          "text",
+          "jquery",
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.bundle.min",
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
+          }
         ]
       }
     ],
+    "copyFiles": {
+      "index.html": "dist/app",
+      "favicon.ico": "dist/app",
+      "/scripts/*": "dist/app/scripts"
+    },
     "loader": {
       "type": "require",
       "configTarget": "vendor-bundle.js",
