@@ -1,39 +1,66 @@
 <template>
-  <h1>${message}</h1>
-  Tools used
-  - Aurelia (Alternatives: Angular, React, Svelte, Vue, etc... or no framework)
-  - Yarn
-  - Node.js LTS and Git
-  - GitHub
-  - Visual Studio Code
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid mt-3">
+      <div class="container">
+        <h1 class="display-4">Hello Azure static web apps</h1>
+        <p class="lead">One of the things I tried right away after the MS Build 2020. <a
+            href="https://johnpapa.net/static-web-apps-first-look/">John Papa</a> thanks for a great walk walk-through
+        </p>
+      </div>
+    </div>
+    <h3 class="display-4">Tools used</h3>
+    <div class="row">
+      <div class="col-sm-5">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="https://aurelia.io/" target="_blank">Aurelia</a> (Alternatives: <a
+              href="https://angular.io/" target="_blank">Angular</a>, <a href="https://reactjs.org/"
+              target="_blank">React</a>, <a href="https://svelte.dev/" target="_blank">Svelte</a>, <a
+              href="https://vuejs.org/" target="_blank">Vue</a>, etc... or no framework)</li>
+          <li class="list-group-item">Yarn</li>
+          <li class="list-group-item"><a href="https://nodejs.org/" target="_blank">Node.js LTS and Git</a></li>
+          <li class="list-group-item"><a href="https://github.com" target="_blank">GitHub</a></li>
+          <li class="list-group-item"><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clearfix">
+      <br />
+    </div>
+    <h3 class="display-4">Steps taken</h3>
+    <p class="text-muted">
+      Created a GitHub repo and repo it if haven't done so already. Then write your web app. I used Aurelia framework to
+      build my app. The following are Aurelia CLI commands to create the web app. Click <a
+        href="https://aurelia.io/docs/cli/cli-bundler/basics#introduction">here</a> for more on basics features of the
+      Aurelia CLI's built-in Bundler.
+    </p>
+    <ol>
+      <li><kbd>cd azure-static-web-app</kbd></li>
+      <li><kbd>au new app-name --here</kbd> I used CLI's built-in bundler with RequireJS</li>
+      <li><kbd>yarn install</kbd> To install all dependencies for a project</li>
+      <li><kbd>au run --watch</kbd> To run the app.</li>
+    </ol>
+    <p class="text-muted">
+      I made the following changes so to create a dist/app directory for build output and deployment artifacts. Updated
+      build and platform config in the aurelia_project/aurelia.json file
+    </p>
 
-  Steps taken
-- Created a repo on GitHub
-  - Cloned the repo
-- Created Aurelia app
-  - cd azure-static-web-app
-  - au new app-name --here
-  - yarn install
-  - au run --watch 
-  - commit and push
-
-  I made the following changes so to create a dist/app directory for build/deployment artifacts.
-  Updated build and platform config in the aurelia_project/aurelia.json file
-
+    <pre>
   "build": {
     "targets": [
-      {
-        "port": 9000,
-        "index": "dist/app/index.html",
-        "baseDir": "dist/app/",
-        "output": "dist/app/scripts",
-        "baseUrl": "scripts"
-      }
+    {
+    "port": 9000,
+    "index": "dist/app/index.html",
+    "baseDir": "dist/app/",
+    "output": "dist/app/scripts",
+    "baseUrl": "scripts"
+    }
     ],
     ...
-  }
-  ...
-  "platform": {
+    }
+    ...
+    "platform": {
     "port": 9000,
     "host": "localhost",
     "open": false,
@@ -41,10 +68,51 @@
     "baseDir": "dist/app/",
     "output": "dist/app/scripts",
     "baseUrl": "scripts"
-  }
-
-- Create a Static Web App on Azure Portal
-
-<iframe src="https://channel9.msdn.com/Events/Build/2020/INT159/player" width="960" height="540" allowFullScreen frameBorder="0" title="From code to scale! Build a static web app in minutes - Microsoft Channel 9 Video"></iframe>
-
+    }
+  </pre>
+    <p class="text-muted">
+      I then wrote my app, this content here, and pushed my changes.
+    </p>
+    <div class="clearfix">
+      <br />
+    </div>
+    <h3 class="display-4">Create a Static Web App on Azure Portal</h3>
+    <ol>
+      <li>
+        Go to the
+        <a
+          href="https://portal.azure.com/?feature.customportal=false#create/Microsoft.StaticApp?wt.mc_id=staticwebapps-blog-theekatlego">Azure
+          Portal here</a>
+      </li>
+      <li>
+        Complete the form. You'll need to sign in with GitHub.
+      </li>
+    </ol>
+    <img src="../images/Screenshot 2020-10-22 212904.png" alt="Azure static web app wizard">
+    <div class="clearfix">
+      <br />
+    </div>
+    <h3 class="display-4">Microsoft Build 2020</h3>
+    <p class="lead">From code to scale! Build a static web app in minutes</p>
+    <h6>Jun 04, 2020 at 10:33PM by John Papa</h6>
+    <iframe src="https://channel9.msdn.com/Events/Build/2020/INT159/player" width="960" height="540" allowFullScreen
+      frameBorder="0"
+      title="From code to scale! Build a static web app in minutes - Microsoft Channel 9 Video"></iframe>
+    <div class="clearfix">
+      <br />
+    </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container mx-auto">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a href="https://github.com/theeKatlego/azure-static-web-app">Github Repo</a></li>&nbsp;|&nbsp;
+          <li class="nav-item"><a
+              href="https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=staticwebaps-blog-theekatlego">Azure
+              Static Web Apps documentation</a></li>&nbsp;|&nbsp;
+          <li class="nav-item"><a
+              href="https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=staticwebaps-blog-jopapa">
+              Microsoft Learn hands-on tutorials</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 </template>

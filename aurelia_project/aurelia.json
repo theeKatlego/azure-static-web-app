@@ -100,6 +100,7 @@
     "copyFiles": {
       "index.html": "dist/app",
       "favicon.ico": "dist/app",
+      "images/*":"dist/app/images/",
       "/scripts/*": "dist/app/scripts/"
     },
     "loader": {
